@@ -1,4 +1,12 @@
+<?php
 
+if (isset($_POST['subscribe'])) {
+
+    if (isset($_POST['name']) & !empty($_POST['name'])) {
+        setcookie( 'name', $_POST['name']);
+    }
+}
+?>
 
 <!DOCTYPE html>
 
