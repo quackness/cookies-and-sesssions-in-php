@@ -7,6 +7,13 @@ if (isset($_POST['subscribe'])) {
         setcookie('name', $_POST['name'], $options);
     }
 }
+
+if (isset($_POST['unsubscribe']) && isset($_COOKIE['name']) ) {
+    $options['expires'] = time() - 60;
+    setcookie( 'name', $_COOKIE['name'], $options);
+    unset($_COOKIE['name']);
+    echo 'Cookies Deleted';
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +44,9 @@ if (isset($_POST['subscribe'])) {
                     Thank you
                     <?php echo $_COOKIE['name'] ?>, for subscribing to our services
                 </h5>
+                <form method="post" action="about-us.php">
+                    <button class="btn btn-primary" type="submit" name="unsubscribe">Unsubscribe</button>
+                </form>
             <?php endif; ?>
         </div>
         <pre><?php print_r($_COOKIE) ?></pre>
