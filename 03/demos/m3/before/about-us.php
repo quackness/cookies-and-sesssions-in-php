@@ -31,6 +31,7 @@ if (isset($_POST['subscribe'])) {
                 <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results.
                     Happiness guaranteed!</p>
             </div>
+            <pre><?php print_r($_COOKIE)?></pre>
         </div>
     </body>
 </html>
