@@ -3,7 +3,8 @@
 if (isset($_POST['subscribe'])) {
 
     if (isset($_POST['name']) & !empty($_POST['name'])) {
-        setcookie( 'name', $_POST['name']);
+        $options['expires'] = time() + 3600;
+        setcookie( 'name', $_POST['name'], $options);
     }
 }
 ?>
