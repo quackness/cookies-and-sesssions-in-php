@@ -15,13 +15,14 @@ echo "\n";
 
 $_SESSION = [];
 $ses_params = session_get_cookie_params();
-print_r($options = array(
-    'lifetime' => time()-60,
+$options = array(
+    // 'lifetime' => time()-60,
+    'expires' => time()-60,
     'path'     => $ses_params['path'],
     'domain'   => $ses_params['domain'],
     'secure'   => $ses_params['secure'],
     'httponly' => $ses_params['httponly'],
-    'samesite' => $ses_params['samesite']));
+    'samesite' => $ses_params['samesite']);
 
   
 setcookie(session_name(), '', $options);
