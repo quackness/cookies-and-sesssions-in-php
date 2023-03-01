@@ -1,5 +1,9 @@
 <?php
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
 class MyCustomSessionHandler implements SessionHandlerInterface {
 
     protected $table_sess = 'sessions';
@@ -20,7 +24,7 @@ class MyCustomSessionHandler implements SessionHandlerInterface {
     private function dbConnect() {
 
         try {
-            $db = new PDO('mysql:host=localhost;dbname=sess_handler', 'root', 'root');
+            $db = new PDO('mysql:host=localhost:8889/;dbname=sess_handler', 'root', 'root');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $db;
         } catch (PDOException $e) {
