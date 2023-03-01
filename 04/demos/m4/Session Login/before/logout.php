@@ -5,7 +5,7 @@ $_SESSION = [];
 $ses_params = session_get_cookie_params();
 
 $options = array(
-    'lifetime' => time()-60,
+    'expires' => time()-60,
     'path'     => $ses_params['path'],
     'domain'   => $ses_params['domain'],
     'secure'   => $ses_params['secure'],
