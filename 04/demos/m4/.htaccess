@@ -12,8 +12,13 @@ php_value session.name PSSESSID
 php_value session.cache_limiter nocache
 php_value session.cookie_samesite Lax
 
+
 # Cookie settings
 php_value session.cookie_path '/'
 php_value session.cookie_lifetime 0
 php_flag session.cookie_httponly on
 php_flag session.cookie_secure off
+
+
+
+
