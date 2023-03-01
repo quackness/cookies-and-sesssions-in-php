@@ -24,7 +24,7 @@ class MyCustomSessionHandler implements SessionHandlerInterface {
     private function dbConnect() {
 
         try {
-            $db = new PDO('mysql:host=localhost:8889/;dbname=sess_handler', 'root', 'root');
+            $db = new PDO('mysql:host=localhost:8888;dbname=sess_handler', 'root', 'root');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $db;
         } catch (PDOException $e) {
