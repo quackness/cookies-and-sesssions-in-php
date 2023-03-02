@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once 'MyCustomSessionHandler.php';
 
 $username = "";
@@ -22,6 +27,7 @@ if ($username != "" && $password != "") {
         $_SESSION["loggedin"] = true;
         $_SESSION['username'] = $username;
         header("location: dashboard.php");
+        // echo "Dashboard";
         exit;
     } else {
         echo "Oops! Something went wrong. Please try again";
